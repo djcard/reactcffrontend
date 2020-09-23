@@ -5,13 +5,14 @@
     <title>Title</title>
 </head>
 <style>
-    div{width:45%; border: thin solid black; float:left; height:350px }
+    div.widgetWrapper{width:45%; border: thin solid black; float:left; height:350px }
 </style>
 <body>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div id="root">4</div>
+    <cfset mystuff = createObject("widgets")>
+    <div class="widgetWrapper"><cfoutput>#mystuff.widget1()#</cfoutput></div>
+    <div class="widgetWrapper">2</div>
+    <div class="widgetWrapper">3</div>
+    <div id="cfmroot" class="widgetWrapper">4</div>
 <cfinclude template="build/index.html" />
 </body>
 </html>
